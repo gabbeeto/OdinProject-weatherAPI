@@ -1,1 +1,1 @@
-alert('this works');
+import './functionality/weather.js'
