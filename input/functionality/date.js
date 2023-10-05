@@ -13,9 +13,9 @@ export function getDateFollowingDays() {
 
 
   return{
-    day1: day2.toLocaleString('en-us', { weekday: 'long' }),
-      day2: day3.toLocaleString('en-us', { weekday: 'long' }),
-        day3: day4.toLocaleString('en-us', { weekday: 'long' })
+    day1: day1.toLocaleString('en-us', { weekday: 'long' }),
+      day2: day2.toLocaleString('en-us', { weekday: 'long' }),
+        day3: day3.toLocaleString('en-us', { weekday: 'long' })
   }
 
 
