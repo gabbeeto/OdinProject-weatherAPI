@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "my project from TOP using the weather api",
   "main": "webpack.config.js",
+  "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

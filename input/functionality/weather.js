@@ -4,10 +4,10 @@
 
 export function getWeather(weatherRequest){
 
-fetch(weatherRequest).then(testIfitWorks).then(interactWithJson).catch((error) => console.log(error))
+return fetch(weatherRequest).then(testIfitWorks).then(interactWithJson).catch((error) => console.log(error))
 
 function testIfitWorks(response){
-    console.log(response)
+    // console.log(response)
   if(response.ok){
    return response.json()
   }
