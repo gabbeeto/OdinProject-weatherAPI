@@ -6,7 +6,6 @@ let button = document.querySelector(`form button`);
 button.addEventListener('click', updateForecast);
 
 
-// work on this 
 async function updateForecast() {
 
   let searchValue = document.querySelector(`form input[type='search']`).value;
@@ -15,8 +14,6 @@ async function updateForecast() {
   header.append('method', 'GET');
 
 
-  let currentDateWithYYYMMDDFormat = new Date().toISOString().split('T')[0];
-
   let weatherUrl = new URL(`http://api.weatherapi.com/v1/forecast.json`);
 
   let queries = new URLSearchParams(weatherUrl.search);
@@ -24,10 +21,9 @@ async function updateForecast() {
   queries.append('q', `${searchValue}`)
   queries.append('days', `3`)
   queries.append('aqi', `no`)
-  queries.append('dt', `${currentDateWithYYYMMDDFormat}`)
+  queries.append('alerts', `no`)
   weatherUrl.search = queries;
 
   let weatherRequest = new Request(weatherUrl, header);
-  let lala = await getWeather(weatherRequest)
-  console.log(lala)
+  let weatherData = await getWeather(weatherRequest)
 }
