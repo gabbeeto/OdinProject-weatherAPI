@@ -14,8 +14,7 @@ function testIfitWorks(response){
 
 
 function interactWithJson(jsonResponse){
-console.log(jsonResponse)
-    return jsonResponse
+    return jsonResponse.forecast.forecastday
 }
 
 }

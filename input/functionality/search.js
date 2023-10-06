@@ -25,5 +25,5 @@ async function updateForecast() {
   weatherUrl.search = queries;
 
   let weatherRequest = new Request(weatherUrl, header);
-  let weatherData = await getWeather(weatherRequest)
+  let forecastData = await getWeather(weatherRequest)
 }
