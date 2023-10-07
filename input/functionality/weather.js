@@ -23,7 +23,7 @@ export function getWeather(weatherRequest) {
       }
     })
 
-    return usefulObjectData;
+    return [...usefulObjectData,{"location":`${jsonResponse.location.name} - ${jsonResponse.location.country}`}];
   }
 
 }

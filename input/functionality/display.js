@@ -1,19 +1,17 @@
-
-export function displayTemperatureInHtml(days) {
+export function displayTemperatureInHtml(daysAndLocation) {
+  console.log(daysAndLocation)
   let allDescriptionList = document.querySelectorAll('dd')
-  console.log(days);
   for (let description of allDescriptionList) {
-    displayDiffentDescriptionDependingOnDay(description, 'avghumidity', 'avghumidity', days)
-    displayDiffentDescriptionDependingOnDay(description, 'avgtemp', 'avgtemp_c', days)
-    displayDiffentDescriptionDependingOnDay(description, 'mintemp', 'mintemp_c', days)
-    displayDiffentDescriptionDependingOnDay(description, 'maxtemp', 'maxtemp_c', days)
+    displayDiffentDescriptionDependingOnDay(description, 'avghumidity', 'avghumidity', daysAndLocation)
+    displayDiffentDescriptionDependingOnDay(description, 'avgtemp', `avgtemp_${window.mode}`, daysAndLocation)
+    displayDiffentDescriptionDependingOnDay(description, 'mintemp', `mintemp_${window.mode}`, daysAndLocation)
+    displayDiffentDescriptionDependingOnDay(description, 'maxtemp', `maxtemp_${window.mode}`, daysAndLocation)
   }
   for(let figure of document.querySelectorAll('figure')){
     let text = figure.querySelector('figcaption')
     let img = figure.querySelector('img')
-    displayDiffentDescriptionDependingOnDay(text, 'conditiontext', 'conditionText', days)
-    displayDiffentDescriptionDependingOnDay(img, 'conditionimage', 'conditionIcon', days, true)
-
+    displayDiffentDescriptionDependingOnDay(text, 'conditiontext', 'conditionText', daysAndLocation)
+    displayDiffentDescriptionDependingOnDay(img, 'conditionimage', 'conditionIcon', daysAndLocation, true)
   }
 }
 
@@ -51,4 +49,9 @@ function displayDiffentDescriptionDependingOnDay(description, typeOfData, typeOf
 
 
 
+
+export function displayLocation([,,,location]){
+let currentLocation = location.location
+document.querySelector('article p span').innerText = currentLocation;
+}
 
