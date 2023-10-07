@@ -1,5 +1,5 @@
 import { getWeather } from './weather.js';
-import { displayInHtml } from './display.js';
+import { displayTemperatureInHtml } from './display.js';
 
 const key = '61b6b8b8c07140b38b6114538232109';
 
@@ -27,5 +27,5 @@ async function updateForecast() {
 
   let weatherRequest = new Request(weatherUrl, header);
   let forecastData = await getWeather(weatherRequest)
-  displayInHtml(forecastData)
+  displayTemperatureInHtml(forecastData)
 }
