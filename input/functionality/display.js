@@ -8,22 +8,44 @@ export function displayTemperatureInHtml(days) {
     displayDiffentDescriptionDependingOnDay(description, 'mintemp', 'mintemp_c', days)
     displayDiffentDescriptionDependingOnDay(description, 'maxtemp', 'maxtemp_c', days)
   }
+  for(let figure of document.querySelectorAll('figure')){
+    let text = figure.querySelector('figcaption')
+    let img = figure.querySelector('img')
+    displayDiffentDescriptionDependingOnDay(text, 'conditiontext', 'conditionText', days)
+    displayDiffentDescriptionDependingOnDay(img, 'conditionimage', 'conditionIcon', days, true)
+
+  }
 }
 
-function displayDiffentDescriptionDependingOnDay(description, typeOfData, typeOfProperty,days){
-let [day1,day2,day3] = days;
+function displayDiffentDescriptionDependingOnDay(description, typeOfData, typeOfProperty, days, isAnImage = false) {
+  let [day1, day2, day3] = days;
 
-switch (description.dataset[`${typeOfData}`]) {
+  switch (description.dataset[`${typeOfData}`]) {
     case 'day1':
-      description.innerText = day1[`${typeOfProperty}`];
+      if (isAnImage) {
+        description.src = `http:${day1[`${typeOfProperty}`]}`;
+      }
+      else {
+        description.innerText = day1[`${typeOfProperty}`];
+      }
       break;
     case 'day2':
-      description.innerText = day2[`${typeOfProperty}`];
+      if (isAnImage) {
+        description.src = `http:${day2[`${typeOfProperty}`]}`;
+      }
+      else {
+        description.innerText = day2[`${typeOfProperty}`];
+      }
       break;
     case 'day3':
-      description.innerText = day3[`${typeOfProperty}`];
+      if (isAnImage) {
+        description.src = `http:${day3[`${typeOfProperty}`]}`;
+      }
+      else {
+        description.innerText = day3[`${typeOfProperty}`];
+      }
       break;
-}
+  }
 
 }
 
