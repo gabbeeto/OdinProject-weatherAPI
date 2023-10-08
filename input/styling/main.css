@@ -62,7 +62,21 @@ border-radius:10px;
 margin:2px;
 }
 
+article:nth-of-type(3) div{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction: column;
+
+
+}
+
 dl{
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
 width:75vw;
 border-radius:6px;
 background-color:#FD8888;
@@ -95,5 +109,11 @@ cursor: pointer;
 article:nth-of-type(3){
 flex-direction:row;
 justify-content: space-around;
+align-items:center;
 }
+
+dl{
+width:70%;
+  }
+
 }
