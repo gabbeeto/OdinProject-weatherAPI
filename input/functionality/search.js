@@ -27,6 +27,7 @@ export async function updateForecast() {
   weatherUrl.search = queries;
 
   let weatherRequest = new Request(weatherUrl, header);
+  console.log(weatherRequest)
   window.forecastData = await getWeather(weatherRequest)
   displayTemperatureInHtml(forecastData)
   displayLocation(forecastData)

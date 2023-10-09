@@ -1,6 +1,6 @@
 import { updateForecast } from "./search.js"
 
-const url = new URL(`https://geolocation-db.com/json/`)
+const url = new URL(`http://geolocation-db.com/json/`)
 const options = { method: 'GET', mode: 'cors' }
 
 getUserDataToDisplayWeather()
