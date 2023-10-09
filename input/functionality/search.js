@@ -19,7 +19,7 @@ export async function updateForecast() {
   }
 
 
-  let weatherUrl = new URL(`http://api.weatherapi.com/v1/forecast.json`);
+  let weatherUrl = new URL(`https://api.weatherapi.com/v1/forecast.json`);
 
   let queries = new URLSearchParams(weatherUrl.search);
   queries.append('key', key)
