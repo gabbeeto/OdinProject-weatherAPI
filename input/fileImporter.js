@@ -1,5 +1,5 @@
 window.mode = 'c';
-
+import './functionality/getLocation.js'
 import './functionality/displayFollowingDays.js';
 import './functionality/search.js';
 import './functionality/weather.js';

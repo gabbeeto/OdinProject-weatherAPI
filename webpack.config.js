@@ -6,6 +6,12 @@ module.exports = {
   entry: './input/fileImporter.js',
   mode: 'development',
   devtool: 'inline-source-map',
+  devServer:{
+    static:{
+    directory:'./output/'
+    },
+    open:true,
+  },
   plugins: [new html({template: './input/index.html'})],
   output: {
     filename: '[name]-[contenthash].js',

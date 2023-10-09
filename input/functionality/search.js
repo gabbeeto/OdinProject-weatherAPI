@@ -7,9 +7,8 @@ let button = document.querySelector(`form button`);
 button.addEventListener('click', updateForecast);
 
 document.querySelector(`form input[type='search']`).value = 'london';
-updateForecast()
 
-async function updateForecast() {
+export async function updateForecast() {
   let searchInput = document.querySelector(`form input[type='search']`)
   let searchValue = searchInput.value;
   let header = new Headers()
