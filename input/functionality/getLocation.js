@@ -1,12 +1,19 @@
 import { updateForecast } from "./search.js"
 
 const url = new URL(`http://geolocation-db.com/json/`)
-const options = { method: 'GET', mode: 'cors' }
+const options = {
+method: 'GET',
+mode: 'cors',
+referrerPolicy: 'no-referrer'
+}
+
+let request =  new Request(url,options)
 
 getUserDataToDisplayWeather()
 
 async function getUserDataToDisplayWeather() {
-  let country = await fetch(url, options)
+  let country = await fetch(request)
+    
     .then(checkIfResponseIsValidAndReturnJson)
     .then(returnLocation)
     .catch(assingLondonAsCountryAndShowError)

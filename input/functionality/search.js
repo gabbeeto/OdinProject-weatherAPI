@@ -11,9 +11,12 @@ document.querySelector(`form input[type='search']`).value = 'london';
 export async function updateForecast() {
   let searchInput = document.querySelector(`form input[type='search']`)
   let searchValue = searchInput.value;
-  let header = new Headers()
-  header.append('mode', 'cors');
-  header.append('method', 'GET');
+
+  const header = {
+    method: 'GET',
+    mode: 'cors',
+    referrerPolicy: 'no-referrer'
+  }
 
 
   let weatherUrl = new URL(`http://api.weatherapi.com/v1/forecast.json`);
