@@ -17,13 +17,13 @@ export function getWeather(weatherRequest) {
     let forecast = jsonResponse.forecast.forecastday
     let usefulObjectData = forecast.map(object => {
       let dayData = object.day
-      let { avghumidity, avgtemp_c, avgtemp_f, maxtemp_c, maxtemp_f, mintemp_c, mintemp_f, condition: { text: conditionText,icon:conditionIcon } } = dayData
+      let { avghumidity, avgtemp_c, avgtemp_f, maxtemp_c, maxtemp_f, mintemp_c, mintemp_f, condition: { text: conditionText, icon: conditionIcon } } = dayData
       return {
-        avghumidity, avgtemp_c, avgtemp_f, maxtemp_c, maxtemp_f, mintemp_c, mintemp_f, conditionText,conditionIcon
+        avghumidity, avgtemp_c, avgtemp_f, maxtemp_c, maxtemp_f, mintemp_c, mintemp_f, conditionText, conditionIcon
       }
     })
-
-    return [...usefulObjectData,{"location":`${jsonResponse.location.name} - ${jsonResponse.location.country}`}];
+    let { temp_c, temp_f, feelslike_c, feelslike_f } = jsonResponse.current
+    return [...usefulObjectData, { "location": `${jsonResponse.location.name} - ${jsonResponse.location.country}` }, { temp_c, temp_f, feelslike_c, feelslike_f }];
   }
 
 }

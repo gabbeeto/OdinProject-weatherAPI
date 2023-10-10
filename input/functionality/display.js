@@ -50,8 +50,11 @@ function displayDiffentDescriptionDependingOnDay(description, typeOfData, typeOf
 
 
 
-export function displayLocation([,,,location]){
+export function displayLocationAndCurrentTemperature([,,,location,temperature]){
 let currentLocation = location.location
+
 document.querySelector('article p span').innerText = currentLocation;
+document.getElementById('currentTemp').innerText = temperature[`temp_${window.mode}`];
+document.getElementById('tempFeeling').innerText = temperature[`feelslike_${window.mode}`];
 }
 

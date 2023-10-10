@@ -1,4 +1,4 @@
-import { displayTemperatureInHtml } from './display.js';
+import { displayTemperatureInHtml,displayLocationAndCurrentTemperature } from './display.js';
 
 let switchButton = document.querySelector('article:nth-of-type(2) button');
 switchButton.addEventListener('click', switchToFahreinheit)
@@ -13,4 +13,5 @@ function switchToFahreinheit() {
     switchButton.innerText = 'Switch To Fahreinheit';
   }
   displayTemperatureInHtml(forecastData);
+  displayLocationAndCurrentTemperature(forecastData)
 }

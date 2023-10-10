@@ -1,5 +1,5 @@
 import { getWeather } from './weather.js';
-import { displayTemperatureInHtml, displayLocation } from './display.js';
+import { displayTemperatureInHtml, displayLocationAndCurrentTemperature } from './display.js';
 
 const key = '61b6b8b8c07140b38b6114538232109';
 
@@ -33,6 +33,6 @@ export async function updateForecast() {
   console.log(weatherRequest)
   window.forecastData = await getWeather(weatherRequest)
   displayTemperatureInHtml(forecastData)
-  displayLocation(forecastData)
+  displayLocationAndCurrentTemperature(forecastData)
   searchInput.value = '';
 }
